@@ -80,7 +80,7 @@ const ContactForm = () => {
           <div className="mt-12 text-center">
             <div className="inline-flex items-center text-gray-600">
               <Mail className="h-5 w-5 mr-2" />
-              <span>contact@datapro.com</span>
+              <span>contact@isku.digital</span>
             </div>
           </div>
         </div>
