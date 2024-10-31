@@ -1,7 +1,7 @@
 const ContactForm = () => {
 
   const msFormsURL = "https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAMAALKeg3lUMVUyS0xaSU1BUTlHMU5JVTNUVURQRzRPQS4u&embed=true"
-  const sandboxSettings = 'allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen'
+  const sandboxSettings = 'allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-forms allow-orientation-lock allow-downloads'
 
   return (
     <section id="contact" className="py-16 md:py-24 bg-white">
