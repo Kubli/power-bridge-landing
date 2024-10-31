@@ -8,9 +8,11 @@ const Services = () => {
         
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           <div className="p-6 rounded-lg border border-gray-200 hover:border-msblue-500 transition-colors">
+            <div className="flex items-start mb-3">
             <div className="w-12 h-12 bg-msblue-50 rounded-lg flex items-center justify-center mb-4">
               <Gauge className="h-6 w-6 text-msblue-500" />
-              <h3 className="text-xl font-semibold mb-3">Dashboard Solutions</h3>
+            </div>
+            <h3 className="text-xl font-semibold">Dashboard Solutions</h3>
             </div>
             <h2 className="text-lg font-semibold mb-2">Unlock the Power of Your Data with Custom Dashboards</h2>
             <p className="text-gray-600">
