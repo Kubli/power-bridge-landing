@@ -6,10 +6,10 @@ const Hero = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center">
           <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 animate-fadeIn">
-            Transform Your Business with Power Platform Solutions
+            Boost Your Business with Powerful Insights
           </h1>
           <p className="text-xl text-gray-600 mb-8 animate-fadeIn" style={{ animationDelay: "0.2s" }}>
-            Expert consulting in PowerBI and Power Automate to help you make data-driven decisions and automate workflows.
+          Quick setup, easy-to-use dashboards, and expert guidance for informed decision-making.
           </p>
           <a
             href="#contact"
