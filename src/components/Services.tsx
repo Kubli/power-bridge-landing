@@ -1,4 +1,4 @@
-import { BarChart, GitBranch } from "lucide-react";
+import { Gauge, Waypoints } from "lucide-react";
 
 const Services = () => {
   return (
@@ -9,17 +9,18 @@ const Services = () => {
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           <div className="p-6 rounded-lg border border-gray-200 hover:border-msblue-500 transition-colors">
             <div className="w-12 h-12 bg-msblue-50 rounded-lg flex items-center justify-center mb-4">
-              <BarChart className="h-6 w-6 text-msblue-500" />
+              <Gauge className="h-6 w-6 text-msblue-500" />
+              <h3 className="text-xl font-semibold mb-3">Dashboard Solutions</h3>
             </div>
-            <h3 className="text-xl font-semibold mb-3">PowerBI Solutions</h3>
+            <h2 className="text-lg font-semibold mb-2">Unlock the Power of Your Data with Custom Dashboards</h2>
             <p className="text-gray-600">
-              Transform your data into actionable insights with custom PowerBI dashboards and reports. We help you visualize your data and make informed decisions.
+              Gain a clear and comprehensive view of your key performance indicators with our tailored dashboards, designed to integrate seamlessly with your existing systems and empower data-driven decision-making. We leverage leading platforms like Power BI and Looker Studio to create solutions that are both powerful and easy to use.
             </p>
           </div>
 
           <div className="p-6 rounded-lg border border-gray-200 hover:border-msblue-500 transition-colors">
             <div className="w-12 h-12 bg-msblue-50 rounded-lg flex items-center justify-center mb-4">
-              <GitBranch className="h-6 w-6 text-msblue-500" />
+              <Waypoints className="h-6 w-6 text-msblue-500" />
             </div>
             <h3 className="text-xl font-semibold mb-3">Power Automate Solutions</h3>
             <p className="text-gray-600">
