@@ -8,7 +8,7 @@ const Header = () => {
     <header className="fixed w-full bg-white/90 backdrop-blur-sm z-50 shadow-sm">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center py-4">
-          <div className="text-2xl font-bold text-msblue-500">isku.digital</div>
+          <div className="text-2xl font-bold text-msblue-500">ISKU.digital</div>
           
           {/* Mobile menu button */}
           <button
