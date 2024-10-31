@@ -25,7 +25,7 @@ const WhyChooseUs = () => {
           {reasons.map((reason, index) => (
             <div key={index} className="p-6 bg-white rounded-lg shadow-sm">
               <div className="flex items-center mb-4">
-                <CheckCircle className="h-6 w-6 text-msblue-500 mr-2" />
+                <CheckCircle className="h-6 w-6 text-msblue-500 mr-2 shrink-0" />
                 <h3 className="text-xl font-semibold">{reason.title}</h3>
               </div>
               <p className="text-gray-600">{reason.description}</p>
