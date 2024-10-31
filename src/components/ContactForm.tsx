@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Mail, MessageSquare } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
+import nodemailer from 'nodemailer';
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -8,15 +9,58 @@ const ContactForm = () => {
     email: "",
     message: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  // Configure your SMTP transport
+  const transporter = nodemailer.createTransport({
+    host: "smtp.example.com", // Replace with your SMTP host
+    port: 587, // Replace with your SMTP port
+    secure: false, // true for 465, false for other ports
+    auth: {
+      user: "your-email@example.com", // Replace with your email
+      pass: "your-password" // Replace with your password
+    }
+  });
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Message sent!",
-      description: "We'll get back to you as soon as possible.",
-    });
-    setFormData({ name: "", email: "", message: "" });
+    setIsSubmitting(true);
+
+    try {
+      // Send email
+      await transporter.sendMail({
+        from: '"Contact Form" <your-email@example.com>', // Replace with your email
+        to: "recipient@example.com", // Replace with recipient email
+        subject: `New Contact Form Submission from ${formData.name}`,
+        text: `
+          Name: ${formData.name}
+          Email: ${formData.email}
+          Message: ${formData.message}
+        `,
+        html: `
+          <h2>New Contact Form Submission</h2>
+          <p><strong>Name:</strong> ${formData.name}</p>
+          <p><strong>Email:</strong> ${formData.email}</p>
+          <p><strong>Message:</strong> ${formData.message}</p>
+        `,
+      });
+
+      toast({
+        title: "Message sent!",
+        description: "We'll get back to you as soon as possible.",
+      });
+      setFormData({ name: "", email: "", message: "" });
+    } catch (error) {
+      console.error('Error sending email:', error);
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again later.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -70,10 +114,11 @@ const ContactForm = () => {
             
             <button
               type="submit"
-              className="w-full px-6 py-3 bg-msblue-500 text-white rounded-lg hover:bg-msblue-600 transition-colors flex items-center justify-center"
+              disabled={isSubmitting}
+              className="w-full px-6 py-3 bg-msblue-500 text-white rounded-lg hover:bg-msblue-600 transition-colors flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed"
             >
               <MessageSquare className="mr-2 h-5 w-5" />
-              Send Message
+              {isSubmitting ? "Sending..." : "Send Message"}
             </button>
           </form>
 
