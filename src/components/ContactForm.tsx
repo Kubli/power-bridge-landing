@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Mail, MessageSquare } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
-import nodemailer from 'nodemailer';
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -12,47 +11,25 @@ const ContactForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
-  // Configure your SMTP transport
-  const transporter = nodemailer.createTransport({
-    host: "smtp.example.com", // Replace with your SMTP host
-    port: 587, // Replace with your SMTP port
-    secure: false, // true for 465, false for other ports
-    auth: {
-      user: "your-email@example.com", // Replace with your email
-      pass: "your-password" // Replace with your password
-    }
-  });
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    try {
-      // Send email
-      await transporter.sendMail({
-        from: '"Contact Form" <your-email@example.com>', // Replace with your email
-        to: "recipient@example.com", // Replace with recipient email
-        subject: `New Contact Form Submission from ${formData.name}`,
-        text: `
-          Name: ${formData.name}
-          Email: ${formData.email}
-          Message: ${formData.message}
-        `,
-        html: `
-          <h2>New Contact Form Submission</h2>
-          <p><strong>Name:</strong> ${formData.name}</p>
-          <p><strong>Email:</strong> ${formData.email}</p>
-          <p><strong>Message:</strong> ${formData.message}</p>
-        `,
-      });
+    // Simulate API call delay
+    await new Promise(resolve => setTimeout(resolve, 1000));
 
+    try {
+      // Here you would typically make an API call to your backend
+      // For now, we'll just simulate a successful submission
+      console.log('Form submitted:', formData);
+      
       toast({
         title: "Message sent!",
         description: "We'll get back to you as soon as possible.",
       });
       setFormData({ name: "", email: "", message: "" });
     } catch (error) {
-      console.error('Error sending email:', error);
+      console.error('Error sending message:', error);
       toast({
         title: "Error",
         description: "Failed to send message. Please try again later.",
