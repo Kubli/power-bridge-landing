@@ -3,16 +3,16 @@ import { CheckCircle } from "lucide-react";
 const WhyChooseUs = () => {
   const reasons = [
     {
-      title: "Expert Consultation",
-      description: "Our team brings years of experience in Power Platform solutions.",
+      title: "Data-Driven Decisions, Made Affordable",
+      description: "Get affordable, tailored dashboards that empower your managers to make data-driven decisions.",
     },
     {
-      title: "Custom Solutions",
-      description: "We create tailored solutions that match your specific business needs.",
+      title: "Your Business, Your Way",
+      description: "We guide you through the entire process, from identifying your needs to building a customized, easy-to-maintain solution that integrates seamlessly with your systems.",
     },
     {
-      title: "Ongoing Support",
-      description: "We provide continuous support to ensure your solutions keep delivering value.",
+      title: "More Than Just Dashboards, We're Your Partners",
+      description: "As your dedicated partners in data-driven success, we provide ongoing support and expertise to help you achieve your business goals.",
     },
   ];
 
