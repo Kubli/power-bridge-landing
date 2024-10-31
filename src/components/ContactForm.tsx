@@ -40,13 +40,21 @@ const ContactForm = () => {
     }
   };
 
+  const sandboxSettings = 'allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen'
+
+
   return (
     <section id="contact" className="py-16 md:py-24 bg-white">
       <div className="container mx-auto px-4">
         <div className="max-w-2xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Get In Touch</h2>
           
-          <iframe width="640px" height="480px" src="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAMAALKeg3lUMVUyS0xaSU1BUTlHMU5JVTNUVURQRzRPQS4u&embed=true" frameborder="0" marginwidth="0" marginheight="0" style="border: none; max-width:100%; max-height:100vh" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe>
+          <iframe 
+            width="640px"   
+            height="480px" 
+            src="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAMAALKeg3lUMVUyS0xaSU1BUTlHMU5JVTNUVURQRzRPQS4u&embed=true" 
+            style={{ border: "none", maxWidth: "100%", maxHeight: "100vh" }} 
+            > </iframe>
 
           <div className="mt-12 text-center">
             <div className="inline-flex items-center text-gray-600">
